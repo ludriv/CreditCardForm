@@ -14,6 +14,9 @@
 		434F3B831BDEBD28008B5006 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 434F3B821BDEBD28008B5006 /* Images.xcassets */; };
 		434F3B861BDEBD28008B5006 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434F3B841BDEBD28008B5006 /* LaunchScreen.xib */; };
 		434F3B921BDEBD28008B5006 /* CreditCardFormTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 434F3B911BDEBD28008B5006 /* CreditCardFormTests.m */; };
+		434F3BAE1BDEC39D008B5006 /* CCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434F3BAD1BDEC39D008B5006 /* CCBaseViewController.m */; };
+		434F3BB91BDEE06B008B5006 /* CCFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434F3BB71BDEE06B008B5006 /* CCFormViewController.m */; };
+		434F3BBA1BDEE06B008B5006 /* CCFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434F3BB81BDEE06B008B5006 /* CCFormViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +44,11 @@
 		434F3B901BDEBD28008B5006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		434F3B911BDEBD28008B5006 /* CreditCardFormTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreditCardFormTests.m; sourceTree = "<group>"; };
 		434F3BA51BDEC166008B5006 /* CreditCardForm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreditCardForm.h; sourceTree = "<group>"; };
+		434F3BAC1BDEC39D008B5006 /* CCBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBaseViewController.h; sourceTree = "<group>"; };
+		434F3BAD1BDEC39D008B5006 /* CCBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBaseViewController.m; sourceTree = "<group>"; };
+		434F3BB61BDEE06B008B5006 /* CCFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFormViewController.h; sourceTree = "<group>"; };
+		434F3BB71BDEE06B008B5006 /* CCFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFormViewController.m; sourceTree = "<group>"; };
+		434F3BB81BDEE06B008B5006 /* CCFormViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCFormViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +144,11 @@
 		434F3BA11BDEC103008B5006 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				434F3BAC1BDEC39D008B5006 /* CCBaseViewController.h */,
+				434F3BAD1BDEC39D008B5006 /* CCBaseViewController.m */,
+				434F3BB61BDEE06B008B5006 /* CCFormViewController.h */,
+				434F3BB71BDEE06B008B5006 /* CCFormViewController.m */,
+				434F3BB81BDEE06B008B5006 /* CCFormViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -243,6 +256,7 @@
 			files = (
 				434F3B811BDEBD28008B5006 /* Main.storyboard in Resources */,
 				434F3B861BDEBD28008B5006 /* LaunchScreen.xib in Resources */,
+				434F3BBA1BDEE06B008B5006 /* CCFormViewController.xib in Resources */,
 				434F3B831BDEBD28008B5006 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,9 +275,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				434F3BB91BDEE06B008B5006 /* CCFormViewController.m in Sources */,
 				434F3B7E1BDEBD28008B5006 /* ViewController.m in Sources */,
 				434F3B7B1BDEBD28008B5006 /* AppDelegate.m in Sources */,
 				434F3B781BDEBD28008B5006 /* main.m in Sources */,
+				434F3BAE1BDEC39D008B5006 /* CCBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

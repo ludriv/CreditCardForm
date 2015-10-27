@@ -7,10 +7,7 @@
 //
 
 #import "ViewController.h"
-
-@interface ViewController ()
-
-@end
+#import "CCFormViewController.h"
 
 @implementation ViewController
 
@@ -19,9 +16,14 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    CCFormViewController *formViewController = [[CCFormViewController alloc] init];
+    
+    [self presentViewController:formViewController
+                       animated:YES
+                     completion:nil];
 }
 
 @end
