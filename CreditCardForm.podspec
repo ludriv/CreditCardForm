@@ -8,27 +8,20 @@
 
 Pod::Spec.new do |s|
 
-  # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  These will help people to find your library, and whilst it
-  #  can feel like a chore to fill in it's definitely to your advantage. The
-  #  summary should be tweet-length, and the description more in depth.
-  #
-
   s.name         = "CreditCardForm"
   s.version      = "0.0.1"
-  s.summary      = "A short description of CreditCardForm."
+  s.summary      = "Simple UI credit card form."
 
-  s.description  = <<-DESC
-                   A longer description of CreditCardForm in Markdown format.
+  # s.description  = <<-DESC
+  #                 A longer description of CreditCardForm in Markdown format.
+  #
+  #                 * Think: Why did you write this? What is the focus? What does it do?
+  #                 * CocoaPods will be using this to generate tags, and improve search results.
+  #                 * Try to keep it short, snappy and to the point.
+  #                 * Finally, don't worry about the indent, CocoaPods strips it!
+  #                 DESC
 
-                   * Think: Why did you write this? What is the focus? What does it do?
-                   * CocoaPods will be using this to generate tags, and improve search results.
-                   * Try to keep it short, snappy and to the point.
-                   * Finally, don't worry about the indent, CocoaPods strips it!
-                   DESC
-
-  s.homepage     = "http://EXAMPLE/CreditCardForm"
+  s.homepage     = "https://github.com/ludriv/CreditCardForm"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -39,7 +32,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT (example)"
+  s.license      = "MIT Licence"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -54,23 +47,9 @@ Pod::Spec.new do |s|
   #
 
   s.author             = { "Ludovic Riviere" => "ludovic.riviere2@gmail.com" }
-  # Or just: s.author    = "Ludovic Riviere"
-  # s.authors            = { "Ludovic Riviere" => "ludovic.riviere2@gmail.com" }
-  # s.social_media_url   = "http://twitter.com/Ludovic Riviere"
+  s.social_media_url   = "https://twitter.com/ludriv"
 
-  # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  If this Pod runs only on iOS or OS X, then specify the platform and
-  #  the deployment target. You can optionally include the target after the platform.
-  #
-
-  # s.platform     = :ios
-  # s.platform     = :ios, "5.0"
-
-  #  When using multiple platforms
-  # s.ios.deployment_target = "5.0"
-  # s.osx.deployment_target = "10.7"
-  # s.watchos.deployment_target = "2.0"
+  s.platform     = :ios, "7.0"
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -79,7 +58,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "http://EXAMPLE/CreditCardForm.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/ludriv/CreditCardForm.git" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -90,10 +69,10 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
+  s.source_files  = "Code", "Code/**/*.{h,m}"
+  s.exclude_files = "Example"
 
-  # s.public_header_files = "Classes/**/*.h"
+  s.public_header_files = "Code/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -129,9 +108,10 @@ Pod::Spec.new do |s|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  # s.requires_arc = true
+  s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency "JSONKit", "~> 1.4"
+
+  # s.dependency "ObjectiveLuhn", "~> 1.0.2"
 
 end
