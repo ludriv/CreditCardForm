@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CCFormViewController">
@@ -11,7 +12,6 @@
                 <outlet property="cardView" destination="caO-dR-TG5" id="2Va-Iq-j7O"/>
                 <outlet property="cryptoLabel" destination="gt6-7N-hGB" id="2DC-1a-mWN"/>
                 <outlet property="cryptoTextField" destination="XN3-F5-IWV" id="R5p-Va-e2e"/>
-                <outlet property="doneButton" destination="qUM-Zf-VuO" id="SJ9-dF-z4t"/>
                 <outlet property="expiresLabel" destination="nJw-7I-WMI" id="B9Y-Ar-eFD"/>
                 <outlet property="expiresTextField" destination="FGo-vw-55M" id="PXc-Cv-bbe"/>
                 <outlet property="fieldsContainer" destination="3jR-AE-EV2" id="NDX-BR-AhF"/>
@@ -61,25 +61,13 @@
                                 <action selector="nextClicked:" destination="-1" eventType="touchUpInside" id="POw-8i-dML"/>
                             </connections>
                         </button>
-                        <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUM-Zf-VuO">
-                            <rect key="frame" x="320" y="0.0" width="0.0" height="50"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" title="DONE">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.059356992184341213" green="0.83399154801005293" blue="0.15119371081712937" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="qUM-Zf-VuO" secondAttribute="trailing" id="5Np-AW-LL8"/>
                         <constraint firstAttribute="height" constant="50" id="8Xe-Wm-6jt"/>
                         <constraint firstAttribute="bottom" secondItem="D48-Cy-2Le" secondAttribute="bottom" id="9Pg-sl-0BG"/>
-                        <constraint firstItem="qUM-Zf-VuO" firstAttribute="leading" secondItem="D48-Cy-2Le" secondAttribute="trailing" id="FR7-Cu-dyN"/>
                         <constraint firstItem="D48-Cy-2Le" firstAttribute="top" secondItem="g1U-Om-gKh" secondAttribute="top" id="JZz-tf-KLM"/>
                         <constraint firstItem="NPn-1f-sf0" firstAttribute="top" secondItem="g1U-Om-gKh" secondAttribute="top" id="M4T-WK-GpC"/>
-                        <constraint firstAttribute="bottom" secondItem="qUM-Zf-VuO" secondAttribute="bottom" id="NBw-JR-gos"/>
-                        <constraint firstItem="qUM-Zf-VuO" firstAttribute="top" secondItem="g1U-Om-gKh" secondAttribute="top" id="NNl-Tc-aT5"/>
                         <constraint firstAttribute="bottom" secondItem="NPn-1f-sf0" secondAttribute="bottom" id="Ugm-rA-WfJ"/>
                         <constraint firstItem="NPn-1f-sf0" firstAttribute="leading" secondItem="g1U-Om-gKh" secondAttribute="leading" id="YZD-SX-ab0"/>
                         <constraint firstAttribute="trailing" secondItem="D48-Cy-2Le" secondAttribute="trailing" id="eGf-qb-V0T"/>
@@ -93,7 +81,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="720" height="80"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="CARD NUMBER" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1H-NT-FPs">
-                                    <rect key="frame" x="20" y="10" width="106" height="17"/>
+                                    <rect key="frame" x="20" y="10" width="103" height="17"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -110,7 +98,7 @@
                                     </connections>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOLDER NAME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVT-SO-d2M">
-                                    <rect key="frame" x="240" y="10" width="103.5" height="17"/>
+                                    <rect key="frame" x="240" y="10" width="101" height="17"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -127,7 +115,7 @@
                                     </connections>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EXPIRES DATE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJw-7I-WMI">
-                                    <rect key="frame" x="460" y="10" width="99.5" height="17"/>
+                                    <rect key="frame" x="460" y="10" width="97" height="17"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -144,7 +132,7 @@
                                     </connections>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CVV/CVC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gt6-7N-hGB">
-                                    <rect key="frame" x="600" y="10" width="62" height="17"/>
+                                    <rect key="frame" x="600" y="10" width="63" height="17"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -219,7 +207,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="caO-dR-TG5" firstAttribute="top" secondItem="kXV-dz-fVJ" secondAttribute="top" constant="20" id="5VZ-wi-Pgp"/>
                         <constraint firstItem="caO-dR-TG5" firstAttribute="top" secondItem="kXV-dz-fVJ" secondAttribute="top" constant="20" id="IXx-QP-QS0"/>

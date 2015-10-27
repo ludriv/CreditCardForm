@@ -17,6 +17,8 @@
 		434F3BAE1BDEC39D008B5006 /* CCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434F3BAD1BDEC39D008B5006 /* CCBaseViewController.m */; };
 		434F3BB91BDEE06B008B5006 /* CCFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434F3BB71BDEE06B008B5006 /* CCFormViewController.m */; };
 		434F3BBA1BDEE06B008B5006 /* CCFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434F3BB81BDEE06B008B5006 /* CCFormViewController.xib */; };
+		6F7514BE1BDF8E63009000C2 /* CreditCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7514BD1BDF8E63009000C2 /* CreditCard.m */; };
+		6F7514EA1BDFDD47009000C2 /* Luhn.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7514E91BDFDD47009000C2 /* Luhn.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,10 @@
 		434F3BB61BDEE06B008B5006 /* CCFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFormViewController.h; sourceTree = "<group>"; };
 		434F3BB71BDEE06B008B5006 /* CCFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFormViewController.m; sourceTree = "<group>"; };
 		434F3BB81BDEE06B008B5006 /* CCFormViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCFormViewController.xib; sourceTree = "<group>"; };
+		6F7514BC1BDF8E63009000C2 /* CreditCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCard.h; sourceTree = "<group>"; };
+		6F7514BD1BDF8E63009000C2 /* CreditCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditCard.m; sourceTree = "<group>"; };
+		6F7514E81BDFDD47009000C2 /* Luhn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Luhn.h; sourceTree = "<group>"; };
+		6F7514E91BDFDD47009000C2 /* Luhn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Luhn.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +141,7 @@
 				434F3BA51BDEC166008B5006 /* CreditCardForm.h */,
 				434F3BA11BDEC103008B5006 /* Controllers */,
 				434F3BA21BDEC117008B5006 /* Models */,
+				6F7514EB1BDFDD72009000C2 /* Validators */,
 				434F3BA31BDEC12C008B5006 /* Views */,
 				434F3BA41BDEC13F008B5006 /* Utilities */,
 			);
@@ -156,6 +163,8 @@
 		434F3BA21BDEC117008B5006 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6F7514BC1BDF8E63009000C2 /* CreditCard.h */,
+				6F7514BD1BDF8E63009000C2 /* CreditCard.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -170,8 +179,25 @@
 		434F3BA41BDEC13F008B5006 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				6F7514E71BDFDD33009000C2 /* ObjectiveLuhn */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		6F7514E71BDFDD33009000C2 /* ObjectiveLuhn */ = {
+			isa = PBXGroup;
+			children = (
+				6F7514E81BDFDD47009000C2 /* Luhn.h */,
+				6F7514E91BDFDD47009000C2 /* Luhn.m */,
+			);
+			path = ObjectiveLuhn;
+			sourceTree = "<group>";
+		};
+		6F7514EB1BDFDD72009000C2 /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Validators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,7 +302,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				434F3BB91BDEE06B008B5006 /* CCFormViewController.m in Sources */,
+				6F7514EA1BDFDD47009000C2 /* Luhn.m in Sources */,
 				434F3B7E1BDEBD28008B5006 /* ViewController.m in Sources */,
+				6F7514BE1BDF8E63009000C2 /* CreditCard.m in Sources */,
 				434F3B7B1BDEBD28008B5006 /* AppDelegate.m in Sources */,
 				434F3B781BDEBD28008B5006 /* main.m in Sources */,
 				434F3BAE1BDEC39D008B5006 /* CCBaseViewController.m in Sources */,

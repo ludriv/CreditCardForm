@@ -7,6 +7,7 @@
 //
 
 #import "CCFormViewController.h"
+#import "CreditCard.h"
 
 @interface CCFormViewController () <UITextFieldDelegate>
 
@@ -36,6 +37,7 @@
 @property (nonatomic, weak) IBOutlet UIView *cardView;
 
 @property (nonatomic) UITextField *focusedTextField;
+@property (nonatomic) CreditCard  *creditCard;
 
 @end
 
@@ -46,7 +48,12 @@ CGFloat const CCFieldsContainerHeight       = 80;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self cc_setup];
     [self cc_setupViews];
+}
+
+- (void)cc_setup {
+    self.creditCard = [[CreditCard alloc] init];
 }
 
 - (void)cc_setupViews {
@@ -63,7 +70,6 @@ CGFloat const CCFieldsContainerHeight       = 80;
 }
 
 - (void)keyboardWillShowChanges:(CGRect)keyboardRect {
-
     self.footerBottom.constant = CGRectGetHeight(keyboardRect);
 }
 
@@ -77,11 +83,10 @@ CGFloat const CCFieldsContainerHeight       = 80;
         self.backButtonWidth.constant = CGRectGetWidth(self.footerView.bounds) / 2;
         offset = CGPointMake(CGRectGetMidX(textField.frame) - self.fieldsContainer.bounds.size.width / 2, 0);
         
-        BOOL allValid = NO;
-        if (allValid) {
-            self.nextButtonRight.constant = CGRectGetWidth(self.footerView.bounds);
+        if ([textField isEqual:self.cryptoTextField]) {
+            [self.nextButton setTitle:@"DONE" forState:UIControlStateNormal];
         } else {
-            self.nextButtonRight.constant = 0;
+            [self.nextButton setTitle:@"NEXT" forState:UIControlStateNormal];
         }
         
     } else {
@@ -112,6 +117,32 @@ CGFloat const CCFieldsContainerHeight       = 80;
                      }];
 }
 
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    
+    if ([textField isEqual:self.numberTextField]) {
+        self.creditCard.number = self.numberTextField.text;
+    } else if ([textField isEqual:self.holderTextField]) {
+        self.creditCard.holderName = self.holderTextField.text;
+    } else if ([textField isEqual:self.expiresTextField]) {
+        self.creditCard.expiresAt = self.expiresTextField.text;
+    } else if ([textField isEqual:self.cryptoTextField]) {
+        self.creditCard.cvv = self.cryptoTextField.text;
+    }
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    
+    NSString *result = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    [self handleTextChange:result];
+    return YES;
+}
+
+- (void)handleTextChange:(NSString *)text {
+    if ([self.focusedTextField isEqual:self.numberTextField]) {
+        
+    }
+}
+
 #pragma mark - Actions
 
 - (IBAction)backClicked:(id)sender {
@@ -131,6 +162,10 @@ CGFloat const CCFieldsContainerHeight       = 80;
         [self.expiresTextField becomeFirstResponder];
     } else if ([self.focusedTextField isEqual:self.expiresTextField]) {
         [self.cryptoTextField becomeFirstResponder];
+    }
+    
+    if ([self.focusedTextField isEqual:self.cryptoTextField]) {
+        /** start validation */
     }
 }
 

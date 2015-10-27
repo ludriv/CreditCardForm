@@ -8,6 +8,18 @@
 
 #import "CCBaseViewController.h"
 
+@protocol CCFormViewControllerDelegate;
+@class CreditCard;
+
 @interface CCFormViewController : CCBaseViewController
+
+@property (nonatomic, weak) id<CCFormViewControllerDelegate> ccDelegate;
+
+@end
+
+@protocol CCFormViewControllerDelegate <NSObject>
+
+- (void)ccDidFinishEditingCreditCard:(CreditCard *)creditCard
+                      fromController:(UIViewController *)controller;
 
 @end
