@@ -23,6 +23,8 @@
 @property (nonatomic, assign, readonly) BOOL frontSide;
 @property (nonatomic, weak) CreditCard *creditCard;
 
+- (void)unregisterObserver;
+
 - (void)flipToBackSide;
 - (void)flipToFrontSide;
 

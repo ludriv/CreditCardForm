@@ -11,20 +11,34 @@
 
 @interface ViewController () <CCFormViewControllerDelegate>
 
+@property (nonatomic, assign) BOOL alreadyShown;
+
 @end
 
 @implementation ViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.alreadyShown = NO;
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    if (self.alreadyShown) {
+        return;
+    }
     
     CCFormViewController *formViewController = [[CCFormViewController alloc] init];
     formViewController.ccDelegate = self;
     
     [self presentViewController:formViewController
                        animated:YES
-                     completion:nil];
+                     completion:^{
+                         self.alreadyShown = YES;
+                     }];
 }
 
 #pragma mark - CCFormViewControllerDelegate

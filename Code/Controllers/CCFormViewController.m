@@ -72,6 +72,10 @@ CGFloat const CCFieldsContainerHeight       = 80;
     self.footerBottom.constant = CGRectGetHeight(keyboardRect);
 }
 
+- (void)dealloc {
+    [self.cardView unregisterObserver];
+}
+
 #pragma mark - UITextFieldDelegate
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
@@ -179,9 +183,13 @@ CGFloat const CCFieldsContainerHeight       = 80;
     } else if ([self.focusedTextField isEqual:self.expiresTextField]) {
         [self.cryptoTextField becomeFirstResponder];
     }
-    
-    if ([self.focusedTextField isEqual:self.cryptoTextField]) {
-        /** start validation */
+    else if ([self.focusedTextField isEqual:self.cryptoTextField]) {
+        /** TODO: validation */
+        
+        if (self.ccDelegate) {
+            [self.ccDelegate ccDidFinishEditingCreditCard:self.creditCard
+                                           fromController:self];
+        }
     }
 }
 

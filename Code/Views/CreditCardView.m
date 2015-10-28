@@ -69,6 +69,14 @@ NSTimeInterval const kCCFlipAnimationDuration = 0.5;
     
 }
 
+- (void)unregisterObserver
+{
+    [self.creditCard removeObserver:self forKeyPath:@"number"];
+    [self.creditCard removeObserver:self forKeyPath:@"holderName"];
+    [self.creditCard removeObserver:self forKeyPath:@"expiresAt"];
+    [self.creditCard removeObserver:self forKeyPath:@"cvv"];
+}
+
 #pragma mark - Flip methods
 
 - (void)flipToBackSide
