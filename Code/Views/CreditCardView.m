@@ -28,6 +28,8 @@ NSTimeInterval const kCCFlipAnimationDuration = 0.5;
 
 - (void)cc_setup
 {
+    self.userInteractionEnabled = NO;
+    
     [self.creditCard addObserver:self
                       forKeyPath:@"number"
                          options:NSKeyValueObservingOptionNew
@@ -58,13 +60,13 @@ NSTimeInterval const kCCFlipAnimationDuration = 0.5;
     id newValue = [change objectForKey:NSKeyValueChangeNewKey];
     
     if ([keyPath isEqualToString:@"number"]) {
-        self.numberLabel.text = newValue;
+        self.numberField.text = newValue;
     } else if ([keyPath isEqualToString:@"holderName"]) {
-        self.holderNameLabel.text = newValue;
+        self.holderNameField.text = newValue;
     } else if ([keyPath isEqualToString:@"expiresAt"]) {
-        self.expiresLabel.text = newValue;
+        self.expiresField.text = newValue;
     } else if ([keyPath isEqualToString:@"cvv"]) {
-        self.cvvLabel.text = newValue;
+        self.cvvField.text = newValue;
     }
     
 }

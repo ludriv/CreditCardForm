@@ -15,10 +15,10 @@
 @property (nonatomic, weak) IBOutlet UIView *frontView;
 @property (nonatomic, weak) IBOutlet UIView *backView;
 
-@property (nonatomic, weak) IBOutlet UILabel *numberLabel;
-@property (nonatomic, weak) IBOutlet UILabel *holderNameLabel;
-@property (nonatomic, weak) IBOutlet UILabel *expiresLabel;
-@property (nonatomic, weak) IBOutlet UILabel *cvvLabel;
+@property (nonatomic, weak) IBOutlet UITextField *numberField;
+@property (nonatomic, weak) IBOutlet UITextField *holderNameField;
+@property (nonatomic, weak) IBOutlet UITextField *expiresField;
+@property (nonatomic, weak) IBOutlet UITextField *cvvField;
 
 @property (nonatomic, assign, readonly) BOOL frontSide;
 @property (nonatomic, weak) CreditCard *creditCard;

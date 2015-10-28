@@ -42,7 +42,7 @@
 @implementation CCFormViewController
 
 CGFloat const CCFooterButtonContainerHeight = 50;
-CGFloat const CCFieldsContainerHeight       = 80;
+CGFloat const CCFieldsContainerHeight       = 70;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
