@@ -9,13 +9,18 @@
 #import "CCBaseViewController.h"
 
 @protocol CCFormViewControllerDelegate;
+
 @class CreditCard;
 
+
 @interface CCFormViewController : CCBaseViewController
+
+@property (nonatomic, strong) CreditCard *creditCard;
 
 @property (nonatomic, weak) id<CCFormViewControllerDelegate> ccDelegate;
 
 @end
+
 
 @protocol CCFormViewControllerDelegate <NSObject>
 

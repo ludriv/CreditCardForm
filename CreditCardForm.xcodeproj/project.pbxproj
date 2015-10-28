@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43377BC71BE03D1500FA3CE7 /* CreditCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43377BC61BE03D1500FA3CE7 /* CreditCardView.m */; };
 		434F3B781BDEBD28008B5006 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 434F3B771BDEBD28008B5006 /* main.m */; };
 		434F3B7B1BDEBD28008B5006 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 434F3B7A1BDEBD28008B5006 /* AppDelegate.m */; };
 		434F3B7E1BDEBD28008B5006 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434F3B7D1BDEBD28008B5006 /* ViewController.m */; };
@@ -32,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43377BC51BE03D1500FA3CE7 /* CreditCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCardView.h; sourceTree = "<group>"; };
+		43377BC61BE03D1500FA3CE7 /* CreditCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditCardView.m; sourceTree = "<group>"; };
 		434F3B721BDEBD28008B5006 /* CreditCardForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditCardForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		434F3B761BDEBD28008B5006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		434F3B771BDEBD28008B5006 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -140,9 +143,9 @@
 			children = (
 				434F3BA51BDEC166008B5006 /* CreditCardForm.h */,
 				434F3BA11BDEC103008B5006 /* Controllers */,
+				434F3BA31BDEC12C008B5006 /* Views */,
 				434F3BA21BDEC117008B5006 /* Models */,
 				6F7514EB1BDFDD72009000C2 /* Validators */,
-				434F3BA31BDEC12C008B5006 /* Views */,
 				434F3BA41BDEC13F008B5006 /* Utilities */,
 			);
 			path = Code;
@@ -172,6 +175,8 @@
 		434F3BA31BDEC12C008B5006 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				43377BC51BE03D1500FA3CE7 /* CreditCardView.h */,
+				43377BC61BE03D1500FA3CE7 /* CreditCardView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 				434F3B7E1BDEBD28008B5006 /* ViewController.m in Sources */,
 				6F7514BE1BDF8E63009000C2 /* CreditCard.m in Sources */,
 				434F3B7B1BDEBD28008B5006 /* AppDelegate.m in Sources */,
+				43377BC71BE03D1500FA3CE7 /* CreditCardView.m in Sources */,
 				434F3B781BDEBD28008B5006 /* main.m in Sources */,
 				434F3BAE1BDEC39D008B5006 /* CCBaseViewController.m in Sources */,
 			);

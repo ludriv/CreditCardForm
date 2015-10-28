@@ -7,6 +7,7 @@
 //
 
 #import "CCFormViewController.h"
+#import "CreditCardView.h"
 #import "CreditCard.h"
 
 @interface CCFormViewController () <UITextFieldDelegate>
@@ -21,8 +22,6 @@
 @property (nonatomic, weak) IBOutlet UIButton           *nextButton;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *nextButtonRight;
 
-@property (nonatomic, weak) IBOutlet UIButton           *doneButton;
-
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *fieldsContainerHeight;
 @property (nonatomic, weak) IBOutlet UIScrollView *fieldsContainer;
 @property (nonatomic, weak) IBOutlet UILabel      *numberLabel;
@@ -34,10 +33,9 @@
 @property (nonatomic, weak) IBOutlet UILabel      *cryptoLabel;
 @property (nonatomic, weak) IBOutlet UITextField  *cryptoTextField;
 
-@property (nonatomic, weak) IBOutlet UIView *cardView;
+@property (nonatomic, weak) IBOutlet CreditCardView *cardView;
 
 @property (nonatomic) UITextField *focusedTextField;
-@property (nonatomic) CreditCard  *creditCard;
 
 @end
 
@@ -61,6 +59,7 @@ CGFloat const CCFieldsContainerHeight       = 80;
     self.fieldsContainerHeight.constant = CCFieldsContainerHeight;
     
     self.cardView.layer.cornerRadius = 5.0f;
+    self.cardView.creditCard = self.creditCard;
     [self.view layoutIfNeeded];
 }
 
@@ -115,31 +114,48 @@ CGFloat const CCFieldsContainerHeight       = 80;
                          [self.fieldsContainer setContentOffset:offset];
                          [self.view layoutIfNeeded];
                      }];
+    
+    if ([textField isEqual:self.cryptoTextField]) {
+        [self.cardView flipToBackSide];
+    } else {
+        [self.cardView flipToFrontSide];
+    }
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     
     if ([textField isEqual:self.numberTextField]) {
-        self.creditCard.number = self.numberTextField.text;
+        self.creditCard.number = textField.text;
     } else if ([textField isEqual:self.holderTextField]) {
-        self.creditCard.holderName = self.holderTextField.text;
+        self.creditCard.holderName = textField.text;
     } else if ([textField isEqual:self.expiresTextField]) {
-        self.creditCard.expiresAt = self.expiresTextField.text;
+        self.creditCard.expiresAt = textField.text;
     } else if ([textField isEqual:self.cryptoTextField]) {
-        self.creditCard.cvv = self.cryptoTextField.text;
+        self.creditCard.cvv = textField.text;
     }
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
     NSString *result = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    if ([self.focusedTextField isEqual:self.expiresTextField]) {
+        if ([string length] != 0 && ![@"0123456789/" containsString:string]) {
+            return NO;
+        }
+    }
     [self handleTextChange:result];
     return YES;
 }
 
 - (void)handleTextChange:(NSString *)text {
     if ([self.focusedTextField isEqual:self.numberTextField]) {
-        
+        self.creditCard.number = text;
+    } else if ([self.focusedTextField isEqual:self.holderTextField]) {
+        self.creditCard.holderName = text;
+    } else if ([self.focusedTextField isEqual:self.expiresTextField]) {
+        self.creditCard.expiresAt = text;
+    } else if ([self.focusedTextField isEqual:self.cryptoTextField]) {
+        self.creditCard.cvv = text;
     }
 }
 
